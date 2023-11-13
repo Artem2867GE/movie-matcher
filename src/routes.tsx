@@ -1,11 +1,13 @@
 import React from "react";
 import { RouteObject } from "react-router-dom";
 
+const MainPage = React.lazy(() => import("./pages/main"));
+
 export const createRouter = (): RouteObject[] => {
   return [
     {
       path: "/",
-      element: <div>Hello it is main page</div>,
+      element: <MainPage />,
     },
     {
       path: "/matcher",
