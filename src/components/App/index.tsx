@@ -8,7 +8,7 @@ function App({ createRouter }: { createRouter: () => RouteObject[] }) {
   return (
     <QueryClientProvider>
       <GlobalStyleProvider>
-        <RouterProvider createRouter={createRouter} />;
+        <RouterProvider createRouter={createRouter} />
       </GlobalStyleProvider>
     </QueryClientProvider>
   );
