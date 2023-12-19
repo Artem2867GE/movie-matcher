@@ -1,5 +1,4 @@
-const DEFAULT_URL = "https://api.themoviedb.org/";
-const TMDB_KEY = process.env.REACT_APP_TMDB_KEY;
+const DEFAULT_URL = `http://${window.location.hostname}:3030/api/`; //FIXME: create prod version of DEFAULT_URL when it is needed
 
 class ApiError extends Error {
   private readonly _response: Response;
@@ -51,7 +50,6 @@ export async function apiRequest<T>(input: RequestInfo, init?: RequestInit): Pro
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer ${TMDB_KEY}`,
       },
       redirect: "error",
       ...init,
